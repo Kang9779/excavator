@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="wjj@localhost" uuid="e1506a69-7f83-4b5f-8c06-867b458d7463">
-      <database-info product="MySQL" version="5.7.21-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
+    <data-source name="wjj@47.98.254.133" uuid="e1506a69-7f83-4b5f-8c06-867b458d7463">
+      <database-info product="MySQL" version="5.7.22-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <user-name>root</user-name>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>wjj</user-name>
       <introspection-schemas>*:wjj</introspection-schemas>
     </data-source>
   </component>

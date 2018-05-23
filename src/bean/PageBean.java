@@ -13,6 +13,11 @@ public class PageBean<E> implements Serializable {
     private Integer totalPage;//总页数
     private Integer totalCount;//总记录数
 
+//    private Integer startpage;
+//    private Integer endpage;
+//    private Integer startsize;
+//    private final Integer SHOWPAGE = 6;
+
     public List<E> getList() {
         return list;
     }

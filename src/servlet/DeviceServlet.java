@@ -205,8 +205,6 @@ public class DeviceServlet extends BaseServlet {
         System.out.println(jsonArray);
         request.setAttribute("health",jsonArray);
         request.getRequestDispatcher("/jsp/health_status.jsp").forward(request,response);
-//        response.setContentType("utf8");
-//        response.getWriter().println(jsonArray);
         return null;
     }
 }

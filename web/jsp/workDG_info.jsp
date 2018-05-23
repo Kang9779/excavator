@@ -161,10 +161,11 @@
                 drawDeformation(dataX,dataY3);
                 drawX_angle(dataX_angle);
                 drawY_angle(dataY_angle);
-            },
-            error:function () {
-                alert("数据请求出错！")
             }
+            // ,
+            // error:function () {
+            //     alert("数据请求出错！")
+            // }
         })
     }
 </script>

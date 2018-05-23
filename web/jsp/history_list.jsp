@@ -128,6 +128,9 @@
                     <%--分页--%>
                     <nav class="pagination-sm text-right" style="padding-right: 10px">
                         <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="${pageContext.request.contextPath}/sensor?method=findSensorHistoryInfo&currPage=1">首页</a>
+                            </li>
                             <c:if test="${sensorbean.totalPage!=0}">
                                 <%--判断当前页是否为首页--%>
                                 <c:if test="${sensorbean.currPage==1}">
@@ -141,8 +144,7 @@
                                         <a class="page-link" href="${pageContext.request.contextPath}/sensor?method=findSensorHistoryInfo&currPage=${sensorbean.currPage-1}">上一页</a>
                                     </li>
                                 </c:if>
-
-                                <c:forEach begin="1" end="${sensorbean.totalPage}" var="n">
+                                <c:forEach begin="${sensorbean.currPage-5>=0?sensorbean.currPage-1:1}" end="${sensorbean.currPage+4>sensorbean.totalPage?sensorbean.totalPage:sensorbean.currPage+4 }" var="n">
                                     <%--判断是否是当前页--%>
                                     <c:if test="${sensorbean.currPage==n}">
                                         <li class="active"><a href="javascript:void(0)">${n}</a> </li>
@@ -158,11 +160,14 @@
                                         <a class="page-link" href="javascript:void(0)">下一页</a>
                                     </li>
                                 </c:if>
-                                <c:if test="${sensorbean.currPage<sensorbean.totalPage}">
+                                <c:if test="${sensorbean.currPage!=sensorbean.totalPage}">
                                     <li class="page-item">
                                         <a class="page-link" href="${pageContext.request.contextPath}/sensor?method=findSensorHistoryInfo&currPage=${sensorbean.currPage+1}">下一页</a>
                                     </li>
                                 </c:if>
+                                <li class="page-item">
+                                    <a class="page-link" href="${pageContext.request.contextPath}/sensor?method=findSensorHistoryInfo&currPage=${sensorbean.totalPage}">尾页</a>
+                                </li>
                             </c:if>
                         </ul>
                     </nav>
