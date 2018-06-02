@@ -142,17 +142,17 @@ public class DeviceServlet extends BaseServlet {
     public String findRealtimeWorkDevice(HttpServletRequest request,HttpServletResponse response) throws Exception{
 
         request.setCharacterEncoding("utf-8");
+        User user = (User)request.getSession().getAttribute("user");
+        String uid = user.getUid();
         DeviceService service = new DeviceServiceImpl();
-        List<Device> realtimeDevices = service.findRealtimeWorkDevice();
+        List<Device> realtimeDevices = service.findRealtimeWorkDevice(uid);
         //实时在线工作的设备信息存放在session域中
         request.getSession().setAttribute("realtimeDevices",realtimeDevices);
         for(Device device:realtimeDevices){
             System.out.println(device.getDname());
         }
         String json = JsonUtil.list2json(realtimeDevices);
-    //    response.setContentType("text/html;charset=utf-8");
         response.getWriter().println(json);
-    //    request.getRequestDispatcher("/jsp/mainboard.jsp").forward(request,response);
         System.out.println("查询实时工作设备");
         return null;
     }

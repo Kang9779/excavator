@@ -110,10 +110,10 @@ public class DeviceDaoImpl implements DeviceDao {
      * @throws Exception
      */
     @Override
-    public List<Device> findRealtimeWorkDevice() throws Exception {
+    public List<Device> findRealtimeWorkDevice(String uid) throws Exception {
         QueryRunner qr = new QueryRunner(DataSourceUtils.getDataSource());
-        String sql = "select * from device where devstatus=1";
-        List<Device> devices = qr.query(sql,new BeanListHandler<>(Device.class));
+        String sql = "select * from device where devstatus=1 and uid=?";
+        List<Device> devices = qr.query(sql,new BeanListHandler<>(Device.class),uid);
         return devices;
     }
 

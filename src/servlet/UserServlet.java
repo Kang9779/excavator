@@ -66,7 +66,7 @@ public class UserServlet extends BaseServlet {
             return "/jsp/login.jsp";
         }
         response.setContentType("text/html;charset=utf-8");
-        request.getSession().setAttribute("user",user);
+        request.getSession().setAttribute("user",user);//将用户信息放入session域中
         Cookie[] cookies = request.getCookies();
         if (cookies==null)
         {

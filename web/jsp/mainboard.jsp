@@ -144,7 +144,7 @@
                     <span>在线工作</span>
                     <span class="pull-right-container">
                         <%--显示正常工作设备数量--%>
-                        <span class="label label-primary pull-right">3</span>
+                        <span class="label label-primary pull-right" id="devsize"></span>
                     </span>
                 </a>
                 <ul class="treeview-menu" id = "realtimeDev">
@@ -229,9 +229,12 @@
         success:function(data){
             var dev = JSON.parse(data);
             var $ul = $("#realtimeDev");
+            var size = 0;
             $(dev).each(function () {
+                size++;
                 $ul.append($("<li><a href=${pageContext.request.contextPath}/page?method=realtimeWorkInfo&mid="+ this.mid +">"+"<i class=\"fa fa-circle-o\"></i> "+this.dname+"</a></li>"));
             })
+            document.getElementById("devsize").innerHTML=size;
         },
         error:function () {
             alert("实时在线设备查询失败！")

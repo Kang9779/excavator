@@ -18,7 +18,7 @@ public interface DeviceDao {
 
     void changeDeviceMod(String dname, String changeMid, String deviceMid) throws Exception;
 
-    List<Device> findRealtimeWorkDevice() throws Exception;
+    List<Device> findRealtimeWorkDevice(String uid) throws Exception;
 
     List<HealthValues> getHealthValuesByDev(String devicename) throws Exception;
 }

@@ -50,9 +50,9 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
-    public List<Device> findRealtimeWorkDevice() throws Exception {
+    public List<Device> findRealtimeWorkDevice(String uid) throws Exception {
         DeviceDao dao = new DeviceDaoImpl();
-        List<Device> devices = dao.findRealtimeWorkDevice();
+        List<Device> devices = dao.findRealtimeWorkDevice(uid);
         return devices;
     }
 
